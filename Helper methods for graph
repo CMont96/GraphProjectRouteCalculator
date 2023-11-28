@@ -1,0 +1,39 @@
+
+    //Helper methods , copy & paste this in one note & keep it somewhere
+
+    public ArrayList<Vertex> getVertices()
+    {
+        return this.vertices;
+    }
+
+    public boolean isWeighted()
+    {
+        return this.isWeighted;
+    }
+
+    public boolean isDirected()
+    {
+        return this.isDirected;
+    }
+
+    public Vertex getVertexByValue(String input) // pulls specific vertex node if it matches the provided input
+            // the data we are comparing uses class from the VERTEX class from method getData
+    {
+        for(Vertex v : this.vertices)
+        {
+            if(v.getData() == input)
+            {
+                return v;
+            }
+
+        }
+        return null;
+    }
+
+    public void print()// prints graph , we are passing "isWeighted" variable as there is a condtion to show weight in the print method in the VERTEX class
+    {
+        for(Vertex v : this.vertices)
+        {
+            v.print(isWeighted);
+        }
+    }
